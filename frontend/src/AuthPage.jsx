@@ -5,7 +5,7 @@ const AuthPage = (props) => {
     e.preventDefault();
      const username = e.target[0].value;
     const password = e.target[1].value;
-    axios.put('http://localhost:3001/authenticate', { username: username, secret: password })
+    axios.put('https://chat-app-2-pqsi.onrender.com/authenticate', { username: username, secret: password })
       .then(r => props.onAuth({ ...r.data, secret: password}))
       .catch(e => console.error('error', e));
   };
