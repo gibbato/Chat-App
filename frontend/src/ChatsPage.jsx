@@ -7,10 +7,22 @@ const ChatsPage = (props) => {
          props.user.username, 
          props.user.secret
         );
-    return <div style={{height: '100vh'}}>
-        <MultiChatSocket {...chatProps} />
-        <MultiChatWindow {...chatProps} style={{height: '100%'}}/>
-    </div>
+    return  <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}>
+        <div style={{
+          width: '80%',
+          height: '80%',
+          display: 'flex',
+          flexDirection: 'column',
+        }}>
+          <MultiChatSocket {...chatProps} />
+          <MultiChatWindow {...chatProps} style={{ height: '100%', flex: 1 }} />
+        </div>
+      </div>
 }
 
 export default ChatsPage;
